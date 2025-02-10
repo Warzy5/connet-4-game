@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5C2DD5;
+}
+
+.main-wrapper {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-board {
+    display: grid;
+    grid-template-columns: repeat(7, 64px);
+    gap: 24px;
+    border: solid black 5px;
+    background-color: white;
+    padding: 24px;
+    border-radius: 16px;
+}
+
+.grid-circle {
+    height: 64px;
+    width: 64px;
+    border: solid black 5px;
+    border-radius: 32px;
+    background-color: #5C2DD5;
+
+}
+
+.yellow-token {
+    background-color: #FFCE67;
+}
