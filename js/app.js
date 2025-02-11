@@ -1,21 +1,47 @@
 const $gridCircles = document.querySelectorAll(
-    ".grid-circle"
-  );
+  ".grid-circle"
+);
 
 
 // Ajouter le joueur courant
-// Ajouter le tableau multi-dimensionel
-  let gameboard = [
-  ["", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", ""],
-  ["", "", "", "", "", "", ""],
-  ]
+let currentPlayer = "y"
 
- $gridCircles.forEach(function($gridCircle){
-    $gridCircle.addEventListener("click", function(){
-        $gridCircle.classList.add("yellow-token")
-    })
- })
+// Ajouter le tableau multi-dimensionel
+let gameboard = [
+  ["", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", ""],
+  ["", "", "", "", "", "", ""],
+]
+
+
+$gridCircles.forEach(function ($gridCircle) {
+  $gridCircle.addEventListener("click", function () {
+    const dataX = $gridCircle.getAttribute("data-x")
+    const dataY = $gridCircle.getAttribute("data-y")
+
+    console.log(gameboard)
+    console.log(gameboard[5][1])
+
+    for (let i = 5; i >= 0; i--) {
+      if (gameboard[i][x] === "") {
+        console.log("C'est vide");
+      } else {
+        console.log("C'est pas vide");
+      }
+    }
+
+
+    // if (currentPlayer === "y") {
+    //   $gridCircle.classList.add("yellow-token")
+    //   currentPlayer = "r"
+    // } else {
+    //   $gridCircle.classList.add("red-token")
+    //   currentPlayer = "y"
+    // }
+    
+  })
+})
+
