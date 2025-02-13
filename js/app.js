@@ -4,7 +4,7 @@ const $gridCircles = document.querySelectorAll(
 
 
 // Ajouter le joueur courant
-let currentPlayer = "y"
+let currentPlayer = "r"
 
 // Ajouter le tableau multi-dimensionel
 let gameboard = [
@@ -17,31 +17,44 @@ let gameboard = [
 ]
 
 
+function checkWin() {
+  console.log("Est-ce que quelqu'un a gagné ?")
+
+  // 
+}
+
+
 $gridCircles.forEach(function ($gridCircle) {
   $gridCircle.addEventListener("click", function () {
     const dataX = $gridCircle.getAttribute("data-x")
     const dataY = $gridCircle.getAttribute("data-y")
-
-    console.log(gameboard)
-    console.log(gameboard[5][1])
-
+    
     for (let i = 5; i >= 0; i--) {
-      if (gameboard[i][x] === "") {
+      if (gameboard[i][dataX] === "") {
         console.log("C'est vide");
+
+        gameboard[i][dataX] = currentPlayer
+        const $selectedCell = document.querySelector(`.grid-circle[data-x="${dataX}"][data-y="${i}"]`)
+
+        checkWin()
+
+        if (currentPlayer === "r") {
+          $selectedCell.classList.add("red-token")
+          currentPlayer = "y"
+        } else {
+          $selectedCell.classList.add("yellow-token")
+          currentPlayer = "r"
+        }
+
+        gameboard[dataY][dataX] = currentPlayer;
+
+
+        return
       } else {
         console.log("C'est pas vide");
       }
     }
 
-
-    // if (currentPlayer === "y") {
-    //   $gridCircle.classList.add("yellow-token")
-    //   currentPlayer = "r"
-    // } else {
-    //   $gridCircle.classList.add("red-token")
-    //   currentPlayer = "y"
-    // }
-    
   })
 })
 

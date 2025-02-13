@@ -29,7 +29,11 @@ body {
     border: solid black 5px;
     border-radius: 32px;
     background-color: #5C2DD5;
+    box-shadow: inset  1em black;
+}
 
+.hidden{
+    display: none;
 }
 
 .yellow-token {
